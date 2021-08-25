@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | [Pricing-component-with-toggle-master]</title>
+  <link rel="stylesheet" href="w3/w3.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="icons/bootstrap-icons.css">
+</head>
+<body>
+
+  <div class="major-container w3-center w3-padding-32">
+    <div class="pattern w3-display-topright w3-right-align" style="z-index: -1;">
+      <img src="images/bg-top.svg" width="80%" alt="">
+    </div>
+    <div class="pattern w3-display-bottomleft w3-left-align" style="z-index: -1;">
+      <img src="images/bg-bottom.svg" width="80%" alt="">
+    </div>
+
+    <main class="" style="max-width: 1300px;margin: auto;height: 100%;">
+      <div class="w3-container">
+        <h2 style="font-weight: bold;color: rgb(60, 60, 60);">Our Pricing</h2>
+        <div class="toggle-options">
+          <p>Annually</p>
+          <div class="toggle" id="myToggle">
+            <div class="icon"></div>
+          </div>
+          <p>Monthly</p>
+        </div>
+
+        <!-- Annually -->
+        <div class="w3-row w3-padding-32 w3-animate-opacity annually " style="max-width: 1024px;margin: auto;">
+          <div class="payment pay-light shadL w3-col l4 m4 s4 w3-mobile w3-padding-32 w3-round-large" style="height: 100%;">
+            <h3>Basic</h3>
+            <h1 class="w3-xxxlarge"><span class="w3-xxlarge dollar">$</span>199.99</h1>
+            <p class="storage">500 GB Storage</p>
+            <p class="">2 Users Allowed</p>
+            <p class="send">Send up to 3 GB</p>
+            <div class="learn-more btn-blue">
+              <a href="" class="btn">LEARN MORE</a>
+
+            </div>
+          </div>
+
+
+          <div class="payment pay-blue w3-col l4 m4 s4 w3-mobile w3-padding-48 w3-round-large" style="height: 100%;margin-top: -15px;">
+            <h3>Professional</h3>
+            <h1 class="w3-xxxlarge"><span class="w3-xxlarge dollar">$</span>249.99</h1>
+            <p class="storage">1 TB Storage</p>
+            <p class="">5 Users Allowed</p>
+            <p class="send ">Send up to 10 GB</p>
+            <div class="learn-more btn-white">
+              <a href="" class="btn">LEARN MORE</a>
+
+            </div>
+          </div>
+
+
+          <div class="payment pay-light shadR w3-col l4 m4 s4 w3-mobile w3-padding-32 w3-round-large" style="height: 100%;">
+            <h3>Master</h3>
+            <h1 class="w3-xxxlarge"><span class="w3-xxlarge dollar">$</span>399.99</h1>
+            <p class="storage">2 TB Storage</p>
+            <p class="">10 Users Allowed</p>
+            <p class="send">Send up to 20 GB</p>
+            <div class="learn-more btn-blue">
+              <a href="" class="btn">LEARN MORE</a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Monthly -->
+        <div class="w3-row w3-padding-32 w3-animate-opacity monthly" style="max-width: 1024px;margin: auto;">
+          <div class="payment pay-light shadL w3-col l4 m4 s4 w3-mobile w3-padding-32 w3-round-large" style="height: 100%;">
+            <h3>Basic</h3>
+            <h1 class="w3-xxxlarge"><span class="w3-xxlarge dollar">$</span>19.99</h1>
+            <p class="storage">500 GB Storage</p>
+            <p class="">2 Users Allowed</p>
+            <p class="send">Send up to 3 GB</p>
+            <div class="learn-more btn-blue">
+              <a href="" class="btn">LEARN MORE</a>
+
+            </div>
+          </div>
+
+
+          <div class="payment pay-blue w3-col l4 m4 s4 w3-mobile w3-padding-48 w3-round-large" style="height: 100%;margin-top: -15px;">
+            <h3>Professional</h3>
+            <h1 class="w3-xxxlarge"><span class="w3-xxlarge dollar">$</span>24.99</h1>
+            <p class="storage">1 TB Storage</p>
+            <p class="">5 Users Allowed</p>
+            <p class="send ">Send up to 10 GB</p>
+            <div class="learn-more btn-white">
+              <a href="" class="btn">LEARN MORE</a>
+
+            </div>
+          </div>
+
+
+          <div class="payment pay-light shadR w3-col l4 m4 s4 w3-mobile w3-padding-32 w3-round-large" style="height: 100%;">
+            <h3>Master</h3>
+            <h1 class="w3-xxxlarge"><span class="w3-xxlarge dollar">$</span>39.99</h1>
+            <p class="storage">2 TB Storage</p>
+            <p class="">10 Users Allowed</p>
+            <p class="send">Send up to 20 GB</p>
+            <div class="learn-more btn-blue">
+              <a href="" class="btn">LEARN MORE</a>
+
+            </div>
+          </div>
+        </div> 
+      </div>
+    </main>
+  </div>
+  
+  <div class="attribution w3-center">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Gift</a>.
+  </div>
+  <script>
+    var toggle = document.getElementById("myToggle");
+    var slideIndex = 1;
+    toggle.onclick = () => {
+      toggle.classList.toggle("switch");
+      plusSlides(1);
+      function plusSlides(n){
+        showSlides(slideIndex += n);
+      }
+    }
+      showSlides(slideIndex);
+      function showSlides(n){
+        var slides = document.getElementsByClassName("w3-row");
+        if(slideIndex>slides.length){slideIndex=1}
+        for(var i=0;i<slides.length;i++){
+          slides[i].style.display = 'none';
+        }
+        slides[i-slideIndex].style.display = 'block';
+      }
+    </script>
+</body>
+</html>
